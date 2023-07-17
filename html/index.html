@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Comic%20Neue"rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Tilt%20Prism"rel='stylesheet'>
+  <meta name="viewport" content="width=device-width">
+  <title>RealGaming Server Webview</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+<script src= "socket.io/socket.io.js"></script>
+ <script src = "script.js"></script>
+  <style>
+  
+   
+  </style>
+  
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+     <script>
+     
+    
+                
+    $.getJSON("https://freeipapi.com/api/json", function(data) {
+         
+        // Setting text of element P with id gfg
+        $("#gfg").html("Public IP:"+data.ipAddress);
+    })
+    </script>
+</head>
+
+<body bgcolor="#2d2c2e"  onload = "onload()">
+  <center>
+    <div id="head">
+  RealGaming 2.0 Server
+    </div>
+<br>
+   
+    
+  <a href="./tennis.html"><button class="button button-1">Tennis</button></a>
+   <a href="./boxing.html"><button class="button button-2">Boxing</button></a>
+<div id="foot">
+   
+    <p id="hostname" class="nomargin"> hostname </p>
+   <p id="gfg" class="nomargin">Public IP:Loading</p>
+    Help? <br>
+</p>
+  
+
+
+</div>
+   
+  <script src="script.js"></script>
+    <script>
+   
+    let hostname = location.hostname;
+document.getElementById("hostname").innerHTML = "IP:"+hostname;
+  </script>
+</center>
+</body>
+
+</html>

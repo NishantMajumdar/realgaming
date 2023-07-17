@@ -1,0 +1,22 @@
+{
+  "name": "Socketio-Chat-Template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nut-tree/nut-js": "^3.1.1",
+    "express": "^4.17.1",
+    "html": "^1.0.0",
+    "ip": "^1.1.8",
+    "open": "^9.1.0",
+    "sendkeys-js": "^0.0.4",
+    "server": "^1.0.27",
+    "socket.io": "^2.3.0"
+  }
+}

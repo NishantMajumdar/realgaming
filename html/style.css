@@ -1,0 +1,100 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body{
+ color: white;
+  align-items: center;
+  
+}
+.button1 {
+    
+  
+    border-radius: 35px;
+   position: absolute;
+  top: 40%;
+  left: 33%;
+  
+    background-color: #414042;
+    color: white;
+   
+    border: none;
+    padding: 3% 5%;
+  font-family: Comic Neue;
+font-size:30px;
+  
+  }
+.button2 {
+    
+  
+    border-radius: 35px;
+   position: absolute;
+  top: 40%;
+  left: 50%;
+    background-color: #414042;
+    color: white;
+    
+    border: none;
+    padding: 3% 5%;
+   font-family: Comic Neue;
+font-size:30px;
+  };
+
+#hostname {
+  margin: unset;
+}
+ #head{
+      font-family: Tilt Prism;
+      font-size: 417%;
+    }
+
+
+  #foot {
+  position: absolute;
+  bottom: 0px;
+      left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 200px; 
+      color: #505251;
+}.nomargin {
+  margin: unset;
+}
+
+.button-2 {
+  
+     position: absolute;
+  top: 40%;
+  left: 50%;
+  border-radius: 20px;
+  color: #fff;
+  transition: .3s;
+}
+.button-2:hover {
+  box-shadow: 8px 8px #5e5c64;
+  transition: .3s;
+}
+.button {
+border-radius: 35px;
+
+    background-color: #414042;
+    color: white;
+    
+    border: none;
+    padding: 3% 5%;
+   font-family: Comic Neue;
+font-size:30px;
+}.button-1 {
+  
+     position: absolute;
+top: 40%;
+  left: 33%;
+  border-radius: 35px;
+  color: #fff;
+  transition: .3s;
+}
+.button-1:hover {
+  box-shadow: 8px 8px #5e5c64;
+  transition: .3s;
+}
