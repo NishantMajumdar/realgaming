@@ -52,9 +52,11 @@ sendkeys.send('h')
 	
 
 }
-if(message==="h\n"){
-	sendkeys.send('ll')
+if(message==="j"){
+
+	sendkeys.send('j')
 	
+
 }
     
     
