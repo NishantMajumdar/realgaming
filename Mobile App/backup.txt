@@ -1,0 +1,238 @@
+
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Home screen</Text>
+        <Button
+          title="go profile settings screen"
+          onPress={() =>
+            navigation.navigate('ProfileStack', { screen: 'ProfileSettings' })
+          }
+        />
+        <WebView
+          ref={(webView) => (this.webView = webView)}
+          originWhitelist={['*']}
+          source={{ uri: 'https://server-1.nishweb.repl.co/in.html' }}
+          javaScriptEnabled={true}
+          injectedJavaScript={WebAPICode}
+        />
+      </View>
+    </SafeAreaView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <View style={{ height: 20 }}>
+     <WebView
+        ref={webView}
+        originWhitelist={['*']}
+        source={{ uri: "https://server-1.nishweb.repl.co/in.html" }}
+        javaScriptEnabled={true}
+        injectedJavaScript={jsCode}
+        style={{ height: 2 }}
+      /></View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TennisScreen() {
+   const webView = useRef(null);
+
+  const sendMessageToWebView2 = () => {
+    console.log(webView);
+    webView.current.injectJavaScript(`
+      (function () {
+        socket.emit("send", "h");
+        
+      })();
+    `);
+  };
+  const [data, setData] = useState({
+    x: 0,
+    y: 0,
+    z: 0,
+  });
+
+  const debounceInterval = 500;
+  let lastShake = 0;
+
+  useEffect(() => {
+    let subscription = null;
+
+    const onShake = () => {
+     
+      const now = Date.now();
+      if (now - lastShake < debounceInterval) {
+        return;
+      }
+      lastShake = now;
+      
+      setData({
+        x: data.x + 1,
+        y: data.y + 1,
+        z: data.z + 1,
+      });
+      if(connected===1){
+      
+      sendMessageToWebView2();
+      }
+      
+    };
+
+    const enableSensor = async () => {
+      Accelerometer.setUpdateInterval(100);
+      subscription = Accelerometer.addListener(({ x, y, z }) => {
+        const acceleration = Math.sqrt(x * x + y * y + z * z);
+        const sensibility = 2.8;
+        if (acceleration >= sensibility) {
+          onShake(acceleration);
+        }
+      });
+    };
+
+    const disableSensor = () => {
+      subscription && subscription.remove();
+      subscription = null;
+    };
+
+    enableSensor();
+
+    return () => {
+      disableSensor();
+    };
+  }, [data]);
+
+  const [value, onChangeText] = React.useState('http://192.168.1.9:3000');
+const handleConnectPress = () => {
+    setShowWebView(true);
+    connected=1;
+  };
+  const handleDisconnectPress = () => {
+    setShowWebView(false);
+    connected=0;
+    
+  };
+  const [showWebView, setShowWebView] = useState(false);
+  return (
+      
+     <View style={styles.container}>
+      <Text style={styles.paragraph}>
+        Tennis
+      </Text>
+      <View style={{ height: 20 }}>{showWebView && (
+        <WebView
+         ref={webView}
+          originWhitelist={['*']}
+          source={{ uri: value }}
+         javaScriptEnabled={true}
+        injectedJavaScript={jsCode}
+          style={{ height: 2 }}
+        />
+      )}</View>
+      <View
+      style={{
+        backgroundColor: value,
+        borderBottomColor: '#000000',
+        borderBottomWidth: 1,
+      }}>
+       
+      <reactn.TextInput
+        editable
+        onChangeText={text => onChangeText(text)}
+        value={value}
+        style={styles.textbox}
+      />
+     </View><Text>     </Text>
+
+        <View style={{ flexDirection:"row" }}>
+         <reactn.TouchableOpacity style={styles.connect} onPress={handleConnectPress}>
+          <Text style={styles.paragraph}>Connect</Text>
+        </reactn.TouchableOpacity>
+    <Text>   </Text>
+   
+    <reactn.TouchableOpacity style={styles.disconnect} onPress={handleDisconnectPress}>
+            <Text style = {styles.paragraph}>
+               Disconnect
+            </Text>
+         </reactn.TouchableOpacity>
+        </View>
+     
+    
+    
+      
+    </View>
+   
+  );
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
